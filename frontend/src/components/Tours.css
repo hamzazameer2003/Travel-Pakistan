@@ -1,0 +1,143 @@
+.tours-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tours-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.tours-page h1 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  background-color: var(--accent);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+  margin: 10px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+}
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tour-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tour-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tour-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.tour-actions .book-button {
+  background: linear-gradient(135deg, var(--pakistan-green), var(--primary-light));
+  color: white;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(1, 65, 28, 0.2);
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tour-actions .chat-button {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 16px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tour-actions .book-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(1, 65, 28, 0.3);
+}
+
+.tour-actions .chat-button:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.tour-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tour-card h3 {
+  padding: 15px;
+  margin: 0;
+  color: #114b27;
+}
+
+.tour-card p {
+  padding: 0 15px;
+  color: #555;
+}
+
+.tour-card .book-button {
+  background-color: #114b27;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 15px;
+  cursor: pointer;
+  width: calc(100% - 30px);
+}
+
+.tour-card .book-button:hover {
+  background-color: #0a341e;
+}

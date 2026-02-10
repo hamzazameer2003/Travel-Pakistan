@@ -1,0 +1,73 @@
+/* Modern Organizer Private Tours Styling */
+.organizer-private-tours {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.organizer-private-tours h1 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.private-tour-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.private-tour-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.private-tour-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.private-tour-card h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.private-tour-card p {
+  margin: 8px 0;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.chat-btn {
+  background: linear-gradient(135deg, var(--pakistan-green), var(--primary-light));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(1, 65, 28, 0.2);
+}
+
+.chat-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(1, 65, 28, 0.3);
+}
+
+.organizer-private-tours p {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}

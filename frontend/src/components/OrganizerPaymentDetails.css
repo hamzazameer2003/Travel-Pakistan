@@ -1,0 +1,113 @@
+.payment-details {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.payment-details h1 {
+  color: #114b27;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.payment-details p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.payment-form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #114b27;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-group select {
+  background: white;
+}
+
+.bank-details {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.save-btn {
+  background: #114b27;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #0a341e;
+}
+
+.save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background: #ccc;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.cancel-btn:hover {
+  background: #999;
+}
+
+.error {
+  color: red;
+  margin-bottom: 20px;
+  text-align: center;
+  background: #ffe6e6;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.success {
+  color: green;
+  margin-bottom: 20px;
+  text-align: center;
+  background: #e6ffe6;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.bank-details .form-group {
+  margin-bottom: 15px;
+}

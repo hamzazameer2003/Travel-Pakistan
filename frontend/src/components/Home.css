@@ -1,0 +1,331 @@
+/* Modern Home Page Styling */
+.home {
+  font-family: 'Inter', sans-serif;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 1.5s ease-in-out;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(1, 65, 28, 0.6), rgba(1, 65, 28, 0.75));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+  background: linear-gradient(135deg, var(--pakistan-white), rgba(255, 255, 255, 0.9));
+  color: var(--pakistan-green);
+  border: 2px solid white;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(1, 65, 28, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(1, 65, 28, 0.4);
+}
+
+.destinations {
+  padding: 80px 20px;
+  background: var(--background);
+}
+
+.destinations h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.destination-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  padding: 20px 20px 5px;
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card p {
+  padding: 0 20px 20px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Top Tours Section */
+.top-tours, .top-organizers {
+  padding: 80px 20px;
+  background: var(--surface);
+}
+
+.top-tours h2, .top-organizers h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+  font-weight: 700;
+  text-align: center;
+}
+
+.top-tours p, .top-organizers p {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-cards, .organizer-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tour-card, .organizer-card {
+  background: var(--surface);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.tour-card:hover, .organizer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Tour Card Content */
+.tour-info {
+  padding: 20px;
+}
+
+.tour-info h3 {
+  margin: 0 0 8px 0;
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.tour-info > p {
+  color: var(--text-secondary);
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.organizer-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.organizer {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.star.filled {
+  color: #ffa500;
+}
+
+.star.half {
+  color: #ffa500;
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.rating-text {
+  display: flex;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  align-items: center;
+  gap: 4px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--pakistan-green);
+  margin: 15px 0 20px;
+}
+
+.view-tour-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--pakistan-green), var(--primary-light));
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(1, 65, 28, 0.2);
+  transition: all 0.3s ease;
+}
+
+.view-tour-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(1, 65, 28, 0.3);
+}
+
+/* Organizer Card */
+.organizer-card {
+  display: flex;
+  padding: 20px;
+  gap: 15px;
+}
+
+.organizer-avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--pakistan-green), var(--primary-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.organizer-info {
+  flex: 1;
+}
+
+.organizer-info h3 {
+  margin: 0 0 8px 0;
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.organizer-rating {
+  margin: 8px 0 10px;
+}
+
+.organizer-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+.view-profile-btn {
+  background: var(--surface);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.view-profile-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
+}

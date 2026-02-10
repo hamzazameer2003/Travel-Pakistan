@@ -1,0 +1,149 @@
+.payment-page {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.payment-page h1 {
+  color: #114b27;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tour-summary {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.tour-summary p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.payment-methods {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.payment-methods h3 {
+  color: #114b27;
+  margin-bottom: 20px;
+}
+
+.method-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.method-options label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.method-options label:hover,
+.method-options input:checked + label {
+  background: #f0f9ff;
+  border-color: #114b27;
+}
+
+.start-payment-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.start-payment-btn:hover {
+  background: #218838;
+}
+
+.pay-btn {
+  background: #114b27;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.pay-btn:hover:not(:disabled) {
+  background: #0a341e;
+}
+
+.pay-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mobile-payment {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+.mobile-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.back-btn {
+  background: #ccc;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.back-btn:hover {
+  background: #999;
+}
+
+.status {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Stripe Element Styles */
+.StripeElement {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  margin-bottom: 20px;
+}

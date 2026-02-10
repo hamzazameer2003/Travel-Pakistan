@@ -1,0 +1,134 @@
+.otp-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(1, 65, 28, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.otp-modal {
+  background: var(--surface);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 480px;
+  width: 95%;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(1, 65, 28, 0.3);
+  border: 3px solid var(--pakistan-green);
+}
+
+.otp-modal-logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--pakistan-green), var(--primary-light));
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.otp-modal h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.otp-modal p {
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.otp-input {
+  width: 100%;
+  padding: 18px;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 8px;
+  border: 3px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: var(--pakistan-green);
+  box-shadow: 0 0 0 4px rgba(1, 65, 28, 0.1);
+  background: var(--surface);
+}
+
+.verify-btn {
+  background: linear-gradient(135deg, var(--pakistan-green), var(--primary-light));
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(1, 65, 28, 0.2);
+  transition: all 0.3s ease;
+}
+
+.verify-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(1, 65, 28, 0.3);
+}
+
+.verify-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.close-btn {
+  background: var(--pakistan-red);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+.otp-note {
+  font-size: 12px;
+  color: var(--text-accent);
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+.error {
+  color: var(--pakistan-red);
+  margin-bottom: 15px;
+  font-weight: 500;
+  background: #fed7d7;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 4px solid var(--pakistan-red);
+}
