@@ -20,12 +20,41 @@ jobs:
       - name: Run Semgrep scan
         run: |
           set +e
-          semgrep scan --config auto --json > repoguard-semgrep.json
-          code=$?
-          if [ ! -s repoguard-semgrep.json ]; then
-            echo '{"results":[],"errors":[{"message":"Semgrep scan failed to produce output","code":'"$code"'}]}' > repoguard-semgrep.json
-          fi
-          exit 0
+          python - <<'PY'
+          import json, os, subprocess, sys
+          from pathlib import Path
+          
+          repo_root = Path(".")
+          files = [str(p) for p in repo_root.rglob("*") if p.is_file()]
+          results = []
+          errors = []
+          scans = 0
+          
+          for f in files:
+            try:
+              proc = subprocess.run(
+                ["semgrep", "scan", "--config", "auto", "--json", f],
+                capture_output=True,
+                text=True
+              )
+              scans += 1
+              if proc.stdout:
+                try:
+                  data = json.loads(proc.stdout)
+                  results.extend(data.get("results", []))
+                  errors.extend(data.get("errors", []))
+                except Exception:
+                  errors.append({"message": "Failed to parse semgrep output", "path": f})
+              if proc.stderr:
+                # keep stderr as error detail
+                errors.append({"message": proc.stderr.strip(), "path": f})
+            except Exception as e:
+              errors.append({"message": str(e), "path": f})
+          
+          payload = {"results": results, "errors": errors, "scanned_files": scans}
+          with open("repoguard-semgrep.json", "w", encoding="utf-8") as fh:
+            json.dump(payload, fh)
+          PY
       - name: Upload Semgrep JSON
         uses: actions/upload-artifact@v4
         with:
