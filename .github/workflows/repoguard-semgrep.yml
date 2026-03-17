@@ -25,7 +25,15 @@ jobs:
           from pathlib import Path
           
           repo_root = Path(".")
-          files = [str(p) for p in repo_root.rglob("*") if p.is_file()]
+          code_exts = set([".js",".ts",".tsx",".jsx",".py",".rb",".go",".java",".kt",".scala",".cs",".cpp",".c",".h",".hpp",".php",".rs",".swift",".lua",".sh",".bash",".ps1",".json",".yml",".yaml",".xml",".html",".css",".scss",".less",".tf",".tfvars",".dockerfile",".sql"])
+          def is_supported(path: Path) -> bool:
+            name = path.name.lower()
+            if name == "dockerfile":
+              return True
+            lower = str(path).lower()
+            return any(lower.endswith(ext) for ext in code_exts)
+          
+          files = [str(p) for p in repo_root.rglob("*") if p.is_file() and is_supported(p)]
           results = []
           errors = []
           scans = 0
