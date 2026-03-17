@@ -1,0 +1,33 @@
+name: RepoGuard Semgrep Scan
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "RepoGuard scan"
+        required: false
+        default: ""
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install Semgrep
+        run: pip install semgrep
+      - name: Run Semgrep scan
+        run: |
+          set +e
+          semgrep scan --config auto --json > repoguard-semgrep.json
+          code=$?
+          if [ ! -s repoguard-semgrep.json ]; then
+            echo '{"results":[],"errors":[{"message":"Semgrep scan failed to produce output","code":'"$code"'}]}' > repoguard-semgrep.json
+          fi
+          exit 0
+      - name: Upload Semgrep JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: repoguard-semgrep
+          path: repoguard-semgrep.json
